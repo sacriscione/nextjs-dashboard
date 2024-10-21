@@ -18,13 +18,13 @@ export default function Pagination({ totalPages }) {
       return `${pathname}?${params.toString()}`;
   };
 
-  // const allPages = generatePagination(currentPage, totalPages);
+  const allPages = generatePagination(currentPage, totalPages);
 
   return (
     <>
       {/* NOTE: comment in this code when you get to this point in the course */}
 
-      {/* <div className="inline-flex">
+      <div className="inline-flex">
         <PaginationArrow
           direction="left"
           href={createPageURL(currentPage - 1)}
@@ -33,7 +33,7 @@ export default function Pagination({ totalPages }) {
 
         <div className="flex -space-x-px">
           {allPages.map((page, index) => {
-            let position: 'first' | 'last' | 'single' | 'middle' | undefined;
+            let position = [];
 
             if (index === 0) position = 'first';
             if (index === allPages.length - 1) position = 'last';
@@ -57,7 +57,7 @@ export default function Pagination({ totalPages }) {
           href={createPageURL(currentPage + 1)}
           isDisabled={currentPage >= totalPages}
         />
-      </div> */}
+      </div>
     </>
   );
 }

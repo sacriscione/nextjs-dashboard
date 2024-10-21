@@ -9,6 +9,8 @@ export default function Search({ placeholder }) {
   const { replace } = useRouter();
 
   function handleSearch(term) {
+    const params = new URLSearchParams(searchParams.toString());
+    
     params.set('page', '1');
     if (term) {
       params.set('query', term);
